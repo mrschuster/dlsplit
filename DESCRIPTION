@@ -1,0 +1,10 @@
+Package: dlsplit
+Title: Worst-Pair Damerau Levenshtein Distance
+Version: 0.0.0.9000
+Authors@R: person("Martin", "Schuster", email = "martin.schuster@epi.uni-kiel.de", role = c("aut", "cre"))
+Description: Split strings at space and find pair which first worst. Compute distance and add penalty. If less, return direct distance. Damerau Levenshtein distance is used.
+Depends: R (>= 3.2.3)
+License: GPLv3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
