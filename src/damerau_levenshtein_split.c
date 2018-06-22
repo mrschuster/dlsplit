@@ -45,7 +45,7 @@ unsigned int damerau_levenshtein(const unsigned int *word1, int len1, const unsi
     return res;
 }
 
-int next_token_length(const unsigned int *arr, int len, int e) {
+int next_token_length(const unsigned int *arr, int len, const unsigned int e) {
   int pos=0;
   while (pos<len && arr[pos] != e)
     pos++;
@@ -60,7 +60,7 @@ int compare_function(const void *a, const void *b) {
 }
 
 double damerau_levenshtein_split(const unsigned int *word1, int len1, const unsigned int *word2, int len2, double penalty) {
-  int delim = ' ';
+  const unsigned int delim = ' ';
 
   int parts1 = 1;
   for (int i=0; i<len1; i++) {
@@ -75,7 +75,7 @@ double damerau_levenshtein_split(const unsigned int *word1, int len1, const unsi
   }
 
   int len1cp = len1;
-  const int *word1cp = word1;
+  const unsigned int *word1cp = word1;
 
   int pairs=0;
   double *pair_distances = (double *) malloc(parts1 * parts2 * sizeof(double));
@@ -87,7 +87,7 @@ double damerau_levenshtein_split(const unsigned int *word1, int len1, const unsi
     int partlen1 = next_token_length(word1cp, len1cp, delim);
     
     int len2cp = len2;
-    const int *word2cp = word2;
+    const unsigned int *word2cp = word2;
     while (len2cp > 0) {
       if (word2cp[0]==delim) {
         word2cp++; len2cp--;
