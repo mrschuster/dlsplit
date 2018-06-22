@@ -4,7 +4,7 @@
 #include "utils.h"
 
 
-unsigned int damerau_levenshtein(const int *word1, int len1, const int *word2, int len2) {
+unsigned int damerau_levenshtein(const unsigned int *word1, int len1, const unsigned int *word2, int len2) {
 //     Rprintf("\ndam %d %d\n", len1, len2);
     unsigned int *prevprev = calloc(len2 + 1, sizeof(unsigned int));
     unsigned int *prev = calloc(len2 + 1, sizeof(unsigned int));
@@ -45,7 +45,7 @@ unsigned int damerau_levenshtein(const int *word1, int len1, const int *word2, i
     return res;
 }
 
-int next_token_length(const int *arr, int len, int e) {
+int next_token_length(const unsigned int *arr, int len, int e) {
   int pos=0;
   while (pos<len && arr[pos] != e)
     pos++;
@@ -59,7 +59,7 @@ int compare_function(const void *a, const void *b) {
   else if (*x > *y) return 1; return 0;
 }
 
-double damerau_levenshtein_split(const int *word1, int len1, const int *word2, int len2, double penalty) {
+double damerau_levenshtein_split(const unsigned int *word1, int len1, const unsigned int *word2, int len2, double penalty) {
   int delim = ' ';
 
   int parts1 = 1;
